@@ -28,24 +28,24 @@ function go_cri_register_sections() {
   // Register the content section when it displays on a page with a sidebar.
   // The layout is (66%/33%) split and the both maxes out at 1200px.
   // This means that the content is never larger than `800px`.
-	register_responsive_image_section( array(
+  register_responsive_image_section( array(
     // The ID will be used within the templates
-		'id' => 'content-with-sidebar',
+    'id' => 'content-with-sidebar',
     // You can defined multiple sizes, but are required to have the upper bound.
-		'sizes' => array(
+    'sizes' => array(
       // Required
-			array(
-				'screen_min_width' => '1200px',
-				'section_max_width' => '800px',
-			),
+      array(
+        'screen_min_width' => '1200px',
+        'section_max_width' => '800px',
+      ),
       // Optional additional sizes.
       array(
         'screen_max_width' => '900px',
         'screen_min_width' => '700px',
-				'section_max_width' => '600px',
+        'section_max_width' => '600px',
       ),
-		)
-	) );
+    )
+  ) );
 }
 ```
 
@@ -53,7 +53,7 @@ function go_cri_register_sections() {
 Wrap the sections in your templates with `begin_responsive_image_section()` and `end_responsive_image_section()`.
 
 ```php
-<?php begin_responsive_image_section('content-with-sidebar'); ?>	
+<?php begin_responsive_image_section('content-with-sidebar'); ?>  
   <div class="content-area entry-content">
     <?php the_content(); ?>
     <nav><?php wp_link_pages(); ?></nav>
