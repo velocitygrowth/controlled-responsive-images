@@ -14,11 +14,11 @@ In your template, you'll add template tags for which section's definition to use
 
 ### Define a section
 
-Use the `cri/register_sections` hook for when to register your sections.
+Use the `cri/register_sections` hook to know when to register your sections.
 Call the `register_responsive_image_section` function to register sections.
 
-The `sizes` defined the max-width of the section's container at a specific screen size.
-You can have multiple sizes, but you are required to have one rule with a `screen_min_width` and `section_max_width`.
+The `sizes` property defines the max-width of the section's container at a specific screen size.
+You can have multiple sizes, but you are required to have one rule with a `screen_min_width` but without `section_max_width`.
 
 ```php
 <?php
@@ -64,7 +64,7 @@ Wrap the sections in your templates with `begin_responsive_image_section()` and 
 </div>
 ```
 
-__The reason the section ID is required for ending the section is catch missing section ends.__
+*The reason the section ID is required for ending the section is to catch missing section ends.*
 
 ## API
 
